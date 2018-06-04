@@ -1,0 +1,123 @@
+﻿<Window x:Class="Project.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:vm ="clr-namespace:Project.ViewModel"
+        xmlns:ctl ="clr-namespace:Project.Controls"
+        xmlns:prop="clr-namespace:Project.Properties"
+        Opacity="0.9" 
+        Title="{x:Static prop:Resources.Title_MainView}" 
+        WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Window.Resources> 
+        
+    </Window.Resources>
+    
+    <Grid Background="{DynamicResource BackgroundBrush}">        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="2" BorderBrush="Black" CornerRadius="5">
+            <DockPanel>
+                <StackPanel Grid.Column="0" DockPanel.Dock="Top">
+                    <Rectangle Height="10" />
+                    <Button x:Name="NewSaleView"  BorderThickness="0" Opacity="0.9"                  
+                        Content="{x:Static prop:Resources.btn_NewSale}"
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=NewSaleView}">
+                    </Button>
+                    <Rectangle Height="5" />
+
+                    <Button x:Name="SaleView"                         
+                        Content="{x:Static prop:Resources.btn_SaleManagement}" 
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=SaleView}"/>
+                    <Rectangle Height="5" />
+
+                    <Button x:Name="SaleReportView"                        
+                        Content="{x:Static prop:Resources.btn_SaleReportManagement}"
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=SaleReportView}"/>
+                    <Rectangle Height="20" />
+
+                    <Button x:Name="NewPurchaseView"                         
+                        Content="{x:Static prop:Resources.btn_NewPurchase}"  
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=NewPurchaseView}"/>
+                    <Rectangle Height="5" />
+
+                    <Button x:Name="PurchaseView"                         
+                        Content="{x:Static prop:Resources.btn_PurchaseManagement}" 
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=PurchaseView}"/>
+                    <Rectangle Height="5" />
+
+                    <Button x:Name="PurchaseReportView"                        
+                        Content="{x:Static prop:Resources.btn_PurchaseReportManagement}"
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=PurchaseReportView}"/>
+                    <Rectangle Height="20" />
+
+                    <Button x:Name="ProductView"                         
+                        Content="{x:Static prop:Resources.btn_ProductManagement}"
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=ProductView}"/>
+                    <Rectangle Height="5" />
+
+                    <Button x:Name="ProductReportView"                        
+                        Content="{x:Static prop:Resources.btn_ProductReport}" 
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=ProductReportView}"/>
+                    <Rectangle Height="20" />
+
+                    <Button x:Name="ChargeView"
+                        Content="{x:Static prop:Resources.btn_ChargeManagement}"
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=ChargeView}"/>
+                    <Rectangle Height="5" />
+
+                    <Button x:Name="CustomerView"
+                        Content="{x:Static prop:Resources.btn_CustomerManagement}"
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=CustomerView}"/>
+                    <Rectangle Height="5" />
+
+                    <Button x:Name="ServiceView"
+                        Content="{x:Static prop:Resources.btn_ServiceManagement}" 
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=ServiceView}"/>
+                    <Rectangle Height="5" />
+
+                    <Button x:Name="SupplierView"
+                        Content="{x:Static prop:Resources.btn_SupplierManagement}"
+                        Command="{Binding OpenWindowCommand}" 
+                        CommandParameter="{ Binding Path=Name,ElementName=SupplierView}"/>
+                    <Rectangle Height="50" />
+                    
+                    
+
+                </StackPanel>
+                
+                <Button x:Name="btn_Close" DockPanel.Dock="Bottom" 
+                        Content="{x:Static prop:Resources.btn_Close}"
+                        Click="btn_Close_Click" />
+
+            </DockPanel>
+        </Border>
+        <!--<StackPanel Grid.Column="1">
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_ID}" Text="{x:Static prop:Resources.tb_ID}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_Category}" Text="{x:Static prop:Resources.tb_ChargeName}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_ChargeName}" Text="{x:Static prop:Resources.tb_ChargeName}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_Contact}" Text="{x:Static prop:Resources.tb_ChargeName}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_CustomerName}" Text="{x:Static prop:Resources.tb_ChargeName}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_MachineID}" Text="{x:Static prop:Resources.tb_ChargeName}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_ManufacturerName}" Text="{x:Static prop:Resources.tb_ChargeName}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_PDM}" Text="{x:Static prop:Resources.tb_ChargeName}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_PhoneNumber}" Text="{x:Static prop:Resources.tb_ChargeName}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.tb_ProductCategory}" Text="{x:Static prop:Resources.tb_ChargeName}" />
+            <ctl:TitleTextBox Title="{x:Static prop:Resources.Title_CustomerView}" Text="{x:Static prop:Resources.Title_ProductReportView}" />
+        </StackPanel>-->
+        
+
+    </Grid>
+</Window>

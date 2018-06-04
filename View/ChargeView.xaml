@@ -1,0 +1,232 @@
+﻿<Window x:Class="Project.View.ChargeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:Project.View"
+        xmlns:prop="clr-namespace:Project.Properties"
+        mc:Ignorable="d"  
+        Title="{x:Static prop:Resources.Title_ChargeView}"
+        WindowState="Maximized" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid Background="{DynamicResource BackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0">
+            <TabItem Header="{x:Static prop:Resources.Header_ChargeDetail}">
+                <Grid x:Name="Root" Background="{DynamicResource BackgroundBrush}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid  Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="25*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{x:Static prop:Resources.tb_Category}" Grid.Column="0"/>
+                            <ComboBox x:Name="cboCategorySearch" Grid.Column="1" ItemsSource="{Binding CategoryList}" IsEditable="False">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="SelectionChanged">
+                                        <i:InvokeCommandAction Command="{Binding CategorySearchCommand}"
+                                                       CommandParameter="{Binding SelectedItem, ElementName=cboCategorySearch}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ComboBox>
+
+                            <TextBlock Text="{x:Static prop:Resources.tb_ChargeName}" Grid.Column="2"/>
+                            <TextBox x:Name="txtName" Grid.Column="3">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="TextChanged">
+                                        <i:InvokeCommandAction Command="{Binding ChargeNameSearchCommand}"
+                                           CommandParameter="{Binding Text, ElementName=txtName}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBox>
+                        </Grid>
+                        <DockPanel Grid.Row="1">
+                            <Grid DockPanel.Dock="Bottom">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{x:Static prop:Resources.tb_SumPrice}" Grid.Column="0"/>
+                                <TextBlock Text="{Binding SumPrice}" Grid.Column="1" Foreground="Red"/>
+
+                                <TextBlock Text="{x:Static prop:Resources.tb_SumCaptalPrice}" Grid.Column="2"/>
+                                <TextBlock Text="{Binding SumCaptalPrice}" Grid.Column="3"/>
+                            </Grid>
+                            <DataGrid x:Name="dgCharge" ItemsSource="{Binding DisplayChargeCollection}" AutoGenerateColumns="False" IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="{x:Static prop:Resources.column_ID}" Binding="{Binding ChargeID}"/>
+                                    <DataGridTextColumn Header="{x:Static prop:Resources.column_Date}" Binding="{Binding PayDate, StringFormat={}{0:yyy/MM/dd}}"/>
+                                    <DataGridTextColumn Header="{x:Static prop:Resources.column_ChargeName}" Binding="{Binding ChargeName}"/>
+                                    <DataGridTextColumn Header="{x:Static prop:Resources.column_Category}" Binding="{Binding Category}" />
+                                    <DataGridTextColumn Header="{x:Static prop:Resources.column_AttendantName}" Binding="{Binding AttendantName}"/>
+                                    <DataGridTextColumn Header="{x:Static prop:Resources.column_Unit}" Binding="{Binding Unit}"/>
+                                    <DataGridTextColumn Header="{x:Static prop:Resources.column_Number}" Binding="{Binding Number}"/>
+                                    <DataGridTextColumn Header="{x:Static prop:Resources.column_UnitPrice}" Binding="{Binding UnitPrice}"/>
+                                    <DataGridTextColumn Header="{x:Static prop:Resources.column_Price}" Binding="{Binding Price}"/>
+
+                                </DataGrid.Columns>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseDoubleClick">
+                                        <i:InvokeCommandAction Command="{Binding EditChargeItemCommand}"
+                                           CommandParameter="{Binding SelectedItem, ElementName=dgCharge}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </DataGrid>
+                        </DockPanel>
+
+                    </Grid>
+
+                    <Rectangle Grid.Column="1" Width="2" Fill="Black"/>
+
+                    <Grid Grid.Column="2"  Visibility="{Binding GridVisibility}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="6*"/>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="4*"/>
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="grid_Charge" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static prop:Resources.tb_ID}"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CurrentCharge.ChargeID}" IsReadOnly="True"/>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{x:Static prop:Resources.tb_ChargeName}"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CurrentCharge.ChargeName}"/>
+
+                            <TextBlock Text="{x:Static prop:Resources.tb_Unit}" Grid.Row="2" Grid.Column="0"/>
+                            <DockPanel Grid.Row="2" Grid.Column="1">
+                                <ComboBox x:Name="cboUnit" DockPanel.Dock="Right" Width="18" ItemsSource="{Binding UnitList}" IsEditable="False">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding UnitSelectionChangedCommand}"
+                                                       CommandParameter="{Binding SelectedItem, ElementName=cboUnit}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <TextBox x:Name="tbUnit" Text="{Binding CurrentCharge.Unit}" IsReadOnly="True"/>
+                            </DockPanel>
+
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="{x:Static prop:Resources.tb_UnitPrice}" />
+                            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CurrentCharge.UnitPrice}" />
+
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="{x:Static prop:Resources.tb_Number}"/>
+                            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CurrentCharge.Number}" />
+
+                            <TextBlock Grid.Row="5" Grid.Column="0" Text="{x:Static prop:Resources.tb_Date}" />
+                            <DatePicker Grid.Row="5" Grid.Column="1"  Text="{Binding CurrentCharge.PayDate, Mode=TwoWay, StringFormat={}{0:yyyy/MM/dd}}"/>
+
+                            <TextBlock Text="{x:Static prop:Resources.tb_Category}" Grid.Row="6" Grid.Column="0"/>
+                            <DockPanel Grid.Row="6" Grid.Column="1">
+                                <ComboBox x:Name="cboCategory" DockPanel.Dock="Right" Width="18" ItemsSource="{Binding CategoryList}" IsEditable="False">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding CategorySelectionChangedCommand}"
+                                                       CommandParameter="{Binding SelectedItem, ElementName=cboCategory}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <TextBox x:Name="tbCategory" Text="{Binding CurrentCharge.Category}" IsReadOnly="True"/>
+                            </DockPanel>
+
+                            <TextBlock Text="{x:Static prop:Resources.tb_AttendantName}" Grid.Row="7" Grid.Column="0"/>
+                            <DockPanel Grid.Row="7" Grid.Column="1">
+                                <ComboBox x:Name="cboAttendant" DockPanel.Dock="Right" Width="18" ItemsSource="{Binding AttendantList}" IsEditable="False">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding AttendantSelectionChangedCommand}"
+                                                       CommandParameter="{Binding SelectedItem, ElementName=cboAttendant}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <TextBox x:Name="tbAttendant" Text="{Binding CurrentCharge.AttendantName}"/>
+                            </DockPanel>
+
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+                            <Button Content="{x:Static prop:Resources.btn_Save}" Command="{Binding SaveChargeCommand}" CommandParameter="{Binding CurrentCharge}" Margin="0,0,20,0"/>
+                            <Button Content="{x:Static prop:Resources.btn_Close}" Command="{Binding GridCollapseCommand}" Margin="20,0,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="{x:Static prop:Resources.Header_ChargeReport}">
+                <Grid x:Name="Root1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    
+                    <DataGrid x:Name="dgChargeDateReport" ItemsSource="{Binding ChargeDateReportCollection}" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{x:Static prop:Resources.column_ID}" Binding="{Binding ID}"/>
+
+                            <DataGridTextColumn Header="{x:Static prop:Resources.column_Date}" Binding="{Binding Date, StringFormat={}{0:yyy/MM}}" />
+                            
+                            <DataGridTextColumn Header="{x:Static prop:Resources.column_Price}" Binding="{Binding Price}"/>
+
+                        </DataGrid.Columns>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseDoubleClick">
+                                <i:InvokeCommandAction Command="{Binding EditChargeItemCommand}"
+                                           CommandParameter="{Binding SelectedItem, ElementName=dgCharge}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </DataGrid>
+
+                    <DataGrid x:Name="dgChargeCategoryReport" Grid.Column="1" ItemsSource="{Binding ChargeCategoryReportCollection}" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{x:Static prop:Resources.column_ID}" Binding="{Binding ID}"/>
+
+                            <DataGridTextColumn Header="{x:Static prop:Resources.column_Category}" Binding="{Binding Category}" />
+
+                            <DataGridTextColumn Header="{x:Static prop:Resources.column_Price}" Binding="{Binding Price}"/>
+
+                        </DataGrid.Columns>
+                        <!--<i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseDoubleClick">
+                                <i:InvokeCommandAction Command="{Binding EditChargeItemCommand}"
+                                           CommandParameter="{Binding SelectedItem, ElementName=dgCharge}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>-->
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btn_Add" Content="{x:Static prop:Resources.btn_Add}" Command="{Binding NewChargeCommand}" Margin="0,0,20,0"/>
+            <Button x:Name="btn_Close" Content="{x:Static prop:Resources.btn_Close}" Click="btn_Close_Click" Margin="20,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

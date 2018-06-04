@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tb_PurchaseID" xml:space="preserve">
+    <value>入库单号：</value>
+  </data>
+  <data name="tb_Supplier" xml:space="preserve">
+    <value>供应商：</value>
+  </data>
+  <data name="btn_Add" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="tb_Address" xml:space="preserve">
+    <value>地址:</value>
+  </data>
+  <data name="tb_AttendantName" xml:space="preserve">
+    <value>经办人:</value>
+  </data>
+  <data name="tb_Category" xml:space="preserve">
+    <value>类别:</value>
+  </data>
+  <data name="btn_ChargeManagement" xml:space="preserve">
+    <value>费用管理</value>
+  </data>
+  <data name="tb_ChargeName" xml:space="preserve">
+    <value>费用名称:</value>
+  </data>
+  <data name="btn_Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="tb_Contact" xml:space="preserve">
+    <value>联系人:</value>
+  </data>
+  <data name="btn_CustomerManagement" xml:space="preserve">
+    <value>客户管理</value>
+  </data>
+  <data name="tb_CustomerName" xml:space="preserve">
+    <value>客户名称:</value>
+  </data>
+  <data name="tb_Date" xml:space="preserve">
+    <value>日期:</value>
+  </data>
+  <data name="tb_ID" xml:space="preserve">
+    <value>序号:</value>
+  </data>
+  <data name="btn_NewPurchase" xml:space="preserve">
+    <value>进货入库</value>
+  </data>
+  <data name="btn_NewSale" xml:space="preserve">
+    <value>销售开单</value>
+  </data>
+  <data name="tb_Number" xml:space="preserve">
+    <value>数量:</value>
+  </data>
+  <data name="tb_PhoneNumber" xml:space="preserve">
+    <value>联系电话:</value>
+  </data>
+  <data name="tb_Price" xml:space="preserve">
+    <value>金额:</value>
+  </data>
+  <data name="btn_ProductManagement" xml:space="preserve">
+    <value>货品管理</value>
+  </data>
+  <data name="btn_ProductReport" xml:space="preserve">
+    <value>货品统计</value>
+  </data>
+  <data name="btn_PurchaseManagement" xml:space="preserve">
+    <value>入库管理</value>
+  </data>
+  <data name="btn_PurchaseReportManagement" xml:space="preserve">
+    <value>入库报表</value>
+  </data>
+  <data name="tb_PY" xml:space="preserve">
+    <value>拼音简码:</value>
+  </data>
+  <data name="btn_SaleManagement" xml:space="preserve">
+    <value>销售管理</value>
+  </data>
+  <data name="btn_SaleReportManagement" xml:space="preserve">
+    <value>销售报表</value>
+  </data>
+  <data name="btn_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="btn_ServiceManagement" xml:space="preserve">
+    <value>维修项目管理</value>
+  </data>
+  <data name="tb_SumCaptalPrice" xml:space="preserve">
+    <value>大写:</value>
+  </data>
+  <data name="tb_SumPrice" xml:space="preserve">
+    <value>合计:</value>
+  </data>
+  <data name="btn_SupplierManagement" xml:space="preserve">
+    <value>供应商管理</value>
+  </data>
+  <data name="tb_Unit" xml:space="preserve">
+    <value>单位:</value>
+  </data>
+  <data name="tb_UnitPrice" xml:space="preserve">
+    <value>单价:</value>
+  </data>
+  <data name="Title_ChargeView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;费用管理</value>
+  </data>
+  <data name="Title_CustomerView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;客户管理</value>
+  </data>
+  <data name="Title_MainView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部</value>
+  </data>
+  <data name="Title_NewPurchaseView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;进货入库</value>
+  </data>
+  <data name="Title_NewSaleView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;销售开单</value>
+  </data>
+  <data name="Title_ProductView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;货品管理</value>
+  </data>
+  <data name="Title_ProductReportView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;货品报表</value>
+  </data>
+  <data name="Title_PurchaseView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;入库管理</value>
+  </data>
+  <data name="Title_PurchaseReportView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;入库报表</value>
+  </data>
+  <data name="Title_SaleView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;销售管理</value>
+  </data>
+  <data name="Title_SaleReportView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;销售报表</value>
+  </data>
+  <data name="Title_ServiceView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;维修项目管理</value>
+  </data>
+  <data name="Title_SupplierView" xml:space="preserve">
+    <value>曲靖明德工程机械配件经营部——&gt;供应商管理</value>
+  </data>
+  <data name="column_AttendantName" xml:space="preserve">
+    <value>经办人</value>
+  </data>
+  <data name="column_Category" xml:space="preserve">
+    <value>类别</value>
+  </data>
+  <data name="column_ChargeName" xml:space="preserve">
+    <value>费用名称</value>
+  </data>
+  <data name="column_Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="column_ID" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="column_Number" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="column_Price" xml:space="preserve">
+    <value>金额</value>
+  </data>
+  <data name="column_Unit" xml:space="preserve">
+    <value>单位</value>
+  </data>
+  <data name="column_UnitPrice" xml:space="preserve">
+    <value>单价</value>
+  </data>
+  <data name="btn_Approve" xml:space="preserve">
+    <value>审核出库</value>
+  </data>
+  <data name="btn_Print" xml:space="preserve">
+    <value>打印</value>
+  </data>
+  <data name="btn_SaveAndNew" xml:space="preserve">
+    <value>保存并新增</value>
+  </data>
+  <data name="column_Supplier" xml:space="preserve">
+    <value>供应商</value>
+  </data>
+  <data name="column_Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="column_Contact" xml:space="preserve">
+    <value>联系人</value>
+  </data>
+  <data name="column_CostPrice" xml:space="preserve">
+    <value>成本价</value>
+  </data>
+  <data name="column_CustomerName" xml:space="preserve">
+    <value>客户名称</value>
+  </data>
+  <data name="column_EngineID" xml:space="preserve">
+    <value>发动机编号</value>
+  </data>
+  <data name="column_MachineID" xml:space="preserve">
+    <value>整机编号</value>
+  </data>
+  <data name="column_ManufacturerName" xml:space="preserve">
+    <value>设备厂家</value>
+  </data>
+  <data name="column_Note" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="column_PDM" xml:space="preserve">
+    <value>厂码</value>
+  </data>
+  <data name="column_PhoneNumber" xml:space="preserve">
+    <value>电话号码</value>
+  </data>
+  <data name="column_ProductCategory" xml:space="preserve">
+    <value>车型/发动机</value>
+  </data>
+  <data name="column_ProductName" xml:space="preserve">
+    <value>配件名称</value>
+  </data>
+  <data name="column_PY" xml:space="preserve">
+    <value>拼音简码</value>
+  </data>
+  <data name="column_SaleUnitPrice" xml:space="preserve">
+    <value>销售单价</value>
+  </data>
+  <data name="tb_CostPrice" xml:space="preserve">
+    <value>成本价:</value>
+  </data>
+  <data name="tb_MachineID" xml:space="preserve">
+    <value>整机编号:</value>
+  </data>
+  <data name="tb_ManufacturerName" xml:space="preserve">
+    <value>设备厂家:</value>
+  </data>
+  <data name="tb_Note" xml:space="preserve">
+    <value>备注：</value>
+  </data>
+  <data name="tb_PDM" xml:space="preserve">
+    <value>厂码:</value>
+  </data>
+  <data name="tb_ProductCategory" xml:space="preserve">
+    <value>车型/发动机:</value>
+  </data>
+  <data name="tb_ProductName" xml:space="preserve">
+    <value>配件名称：</value>
+  </data>
+  <data name="tb_SaleUnitPrice" xml:space="preserve">
+    <value>销售单价:</value>
+  </data>
+  <data name="tb_SumPurchaseCostPrice" xml:space="preserve">
+    <value>合计进货金额:</value>
+  </data>
+  <data name="tb_SumPurchaseCount" xml:space="preserve">
+    <value>合计进货数量：</value>
+  </data>
+  <data name="tb_SumSaleCostPrice" xml:space="preserve">
+    <value>合计销售成本:</value>
+  </data>
+  <data name="tb_SumSaleCount" xml:space="preserve">
+    <value>合计销售数量：</value>
+  </data>
+  <data name="tb_SumSalePrice" xml:space="preserve">
+    <value>配件合计：</value>
+  </data>
+  <data name="btn_Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="column_Service" xml:space="preserve">
+    <value>维修项目</value>
+  </data>
+  <data name="tb_Service" xml:space="preserve">
+    <value>维修项目：</value>
+  </data>
+  <data name="btn_DateSearch" xml:space="preserve">
+    <value>按日期查询</value>
+  </data>
+  <data name="column_Approved" xml:space="preserve">
+    <value>是否已审核</value>
+  </data>
+  <data name="column_DH" xml:space="preserve">
+    <value>单号</value>
+  </data>
+  <data name="column_SumCostPrice" xml:space="preserve">
+    <value>成本价合计</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>配件合计：</value>
+  </data>
+  <data name="tb_DH" xml:space="preserve">
+    <value>单号：</value>
+  </data>
+  <data name="tb_ProductProfit" xml:space="preserve">
+    <value>配件利润：</value>
+  </data>
+  <data name="tb_Sum" xml:space="preserve">
+    <value>总金额：</value>
+  </data>
+  <data name="tb_SumCostPrice" xml:space="preserve">
+    <value>配件成本：</value>
+  </data>
+  <data name="tb_SumProfit" xml:space="preserve">
+    <value>利润合计：</value>
+  </data>
+  <data name="tb_SumServicePrice" xml:space="preserve">
+    <value>工时费合计：</value>
+  </data>
+  <data name="btn_AddNewService" xml:space="preserve">
+    <value>添加维修项目</value>
+  </data>
+  <data name="btn_Load" xml:space="preserve">
+    <value>导入</value>
+  </data>
+  <data name="column_ProductProfit" xml:space="preserve">
+    <value>配件利润</value>
+  </data>
+  <data name="column_Sum" xml:space="preserve">
+    <value>总金额</value>
+  </data>
+  <data name="column_SumPrice" xml:space="preserve">
+    <value>金额</value>
+  </data>
+  <data name="column_SumProfit" xml:space="preserve">
+    <value>利润合计</value>
+  </data>
+  <data name="column_SumServicePrice" xml:space="preserve">
+    <value>工时费合计</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>设备品牌：</value>
+  </data>
+  <data name="tb_Attendant" xml:space="preserve">
+    <value>维修人员：</value>
+  </data>
+  <data name="tb_DisplayNoZero" xml:space="preserve">
+    <value>只显示数量不为零的货品</value>
+  </data>
+  <data name="tb_EngineID" xml:space="preserve">
+    <value>发动机号：</value>
+  </data>
+  <data name="tb_RKDH" xml:space="preserve">
+    <value>入库单号：</value>
+  </data>
+  <data name="tb_XSDH" xml:space="preserve">
+    <value>销售单号：</value>
+  </data>
+  <data name="tb_PurchaseCostPrice" xml:space="preserve">
+    <value>平均进货单价：</value>
+  </data>
+  <data name="btn_UpdateCostPrice" xml:space="preserve">
+    <value>更新配件成本价</value>
+  </data>
+  <data name="Header_ChargeDetail" xml:space="preserve">
+    <value>费用明细</value>
+  </data>
+  <data name="Header_ChargeReport" xml:space="preserve">
+    <value>费用报表</value>
+  </data>
+</root>

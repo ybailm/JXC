@@ -1,0 +1,133 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              ColumnWidth="500" FontFamily="宋体"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+              TextOptions.TextFormattingMode="Display"
+              xmlns:cvt="clr-namespace:Project.Extentions">
+    <FlowDocument.Resources>
+        <cvt:DateConverter x:Key="DateConverter"/>
+        
+        <Style TargetType="Table" x:Key="BorderedTable">
+            <Setter Property="CellSpacing" Value="0"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+
+        <Style TargetType="TableCell" x:Key="BorderedCellLeft">
+            <Setter Property="BorderThickness" Value="0,1,0,1"></Setter>
+            <Setter Property="BorderBrush" Value="#000"></Setter>
+            <Setter Property="TextAlignment" Value="Left"/>
+        </Style>
+        
+        <Style TargetType="TableCell" x:Key="BorderedCellCenter">
+            <Setter Property="BorderThickness" Value="0,1,0,1"></Setter>
+            <Setter Property="BorderBrush" Value="#000"></Setter>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TableCell" x:Key="BorderedCellRight">
+            <Setter Property="BorderThickness" Value="0,1,0,1"></Setter>
+            <Setter Property="BorderBrush" Value="#000"></Setter>
+            <Setter Property="TextAlignment" Value="Right"/>
+        </Style>
+
+        <Style TargetType="TableCell" x:Key="NoBorderedCellLeft">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="BorderBrush" Value="#000"></Setter>
+            <Setter Property="TextAlignment" Value="Left"/>
+        </Style>
+        <Style TargetType="TableCell" x:Key="NoBorderedCellCenter">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="BorderBrush" Value="#000"></Setter>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TableCell" x:Key="NoBorderedCellRight">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="BorderBrush" Value="#000"></Setter>
+            <Setter Property="TextAlignment" Value="Right"/>
+        </Style>
+    </FlowDocument.Resources>
+    <Paragraph TextAlignment="Center" FontSize="16" FontWeight="Bold">销售维修结算单</Paragraph>
+    <Table FontSize="12">
+        <Table.Columns>
+            <TableColumn></TableColumn>
+            <TableColumn Width="320"></TableColumn>
+            <TableColumn></TableColumn>
+            <TableColumn Width="200"></TableColumn>
+        </Table.Columns>
+        <TableRowGroup>
+            <TableRow>
+                <TableCell>
+                    <Paragraph>
+                        客户名称:
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="{Binding Customer.CustomerName}"></Run>
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        单据编号：
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="{Binding SaleID}"></Run>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>
+                    <Paragraph>
+                        销售日期：
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="{Binding SaleDate,Converter={StaticResource DateConverter}}"></Run>
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        联系电话:
+                    </Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph>
+                        <Run Text="{Binding Customer.PhoneNumber}"></Run>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+        </TableRowGroup>
+    </Table>
+
+    <Table Style="{StaticResource BorderedTable}">    
+        <Table.Columns>
+            <TableColumn Width="1*"></TableColumn>
+            <TableColumn Width="5.5*"></TableColumn>
+            <TableColumn Width="5.5*"></TableColumn>
+            <TableColumn Width="4*"></TableColumn>
+            <TableColumn Width="1*"></TableColumn>
+            <TableColumn Width="1*"></TableColumn>
+            <TableColumn Width="2*"></TableColumn>
+            <TableColumn Width="3*"></TableColumn>
+        </Table.Columns>
+        <TableRowGroup Name="SaleDetails">            
+        </TableRowGroup>
+    </Table>   
+
+    <Table Style="{StaticResource BorderedTable}">
+        <Table.Columns>
+            <TableColumn Width="1*"></TableColumn>
+            <TableColumn Width="15*"></TableColumn>
+            <TableColumn Width="1*"></TableColumn>
+            <TableColumn Width="1*"></TableColumn>
+            <TableColumn Width="2*"></TableColumn>
+            <TableColumn Width="3*"></TableColumn>
+        </Table.Columns>
+        <TableRowGroup Name="ServiceDetails">            
+        </TableRowGroup>
+    </Table>
+</FlowDocument>
